@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="/public/style.css"> 
+    <title>Projects&Hobbies</title>
+  </head>
+  <body>
+    <h1 style="text-align:center">Jingwen Yan</h1>
+    <div style="text-align:center">
+      <a href="comment.html">Back</a>
+    </div>
+
+    <table id="t3">
+      <caption>
+        Projects
+      </caption>
+      <tr>
+        <th style="text-align:left">
+          Company database management system based on Django
+        </th>
+        <th style="text-align:right">Feb 2020 - Apr 2020</th>
+      </tr>
+      <tr>
+        <td colspan="2">
+          1. Designed ER model and connected front-end (HTML + CSS), back-end
+          and database (postgre) based on Django frame.<br />
+          2. Conducted operations: insert, delete, update, search, error
+          checking and data aggregation in Django views and forms.<br />
+          3. Designed login, register, welcome page and tables-related
+          interfaces and realized functions including dropdown menu, timepicker,
+          interface jump, search box, tables, button and text input in Django
+          template.
+        </td>
+      </tr>
+      <tr>
+        <th style="text-align:left">
+          Virtual human Android system based on sentiment and voice interaction
+        </th>
+        <th style="text-align:right">Apr 2017 - Jun 2018</th>
+      </tr>
+      <tr>
+        <td colspan="2">
+          1. Accessed TURING Robot API in Android Studio to realize man-machine
+          conversation.<br />
+          2. Processed natural language of users with jieba to realize word
+          segmentation, obtain sentiment words and degree words.<br />
+          3. Conducted weighted calculation of sentiment words and degree words
+          based on Semantic Orientation Pointwise Mutual Information (SO-PMI)
+          algorithm. nterface jump, search box, tables, button and text input in
+          Django template.
+        </td>
+      </tr>
+
+      <tr>
+        <th style="text-align:left">
+          Predict post-surgery risk of patients
+        </th>
+        <th style="text-align:right">Feb - Mar 2020</th>
+      </tr>
+      <tr>
+        <td colspan="2">
+          1. Data preparation: deleted duplicate value and dropped columns with
+          large null values. Filled null numeric data with mean value and object
+          data with pad method. Transformed object type into numeric type via
+          one-hot and LabelEncoder. Scaled data and draw correlation maps to
+          drop highly related data. Split data into train, test and validation
+          set.<br />
+          2. Modeling: Clustered the target using k-means. Built Decision Tree,
+          Multinomial Logistic Regression, LightGBM, XGBoost and CatBoost model
+          to predict risk. Improved accuracy and prevented overfit with L1
+          regularization and hyper tuning tools (hyperband).<br />
+          3. Evaluation: calculated AUC and Logloss. Chose best model to predict
+          new data.
+        </td>
+      </tr>
+    </table>
+
+    <table id="t4">
+      <caption>
+        Hobbies
+      </caption>
+      <tr>
+        <th style="text-align:left">Musical Instruments</th>
+        <th style="text-align:left">Games</th>
+        <th style="text-align:left">Sports</th>
+      </tr>
+      <tr>
+        <td>Guitar, Guzheng, Kalimba</td>
+        <td>Overcook, Human Fall Flat, Fall Guys</td>
+        <td>Hiking</td>
+      </tr>
+    </table>
+  </body>
+</html>

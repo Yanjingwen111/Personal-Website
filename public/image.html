@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ImageGallery</title>
+  <link rel="stylesheet" type="text/css" href="/public/style.css">
+  <script src="jquery-1.7.2.js" defer></script>
+</head>
+
+<body>
+  <h1 style="text-align:center">Photo Gallery</h1>
+  <div style="text-align:center">
+    <a href="comment.html">Back</a>
+  </div>
+
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <div class="numbertext">1 of 6</div>
+
+      <picture>
+        <source media="(min-width: 769px)"
+          srcset="https://cdn.glitch.com/f0c7df61-7fbe-4e78-9ca5-9b43a539fb3e%2F1.jpg?v=1601694646096" />
+        <source media="(min-width: 481px)"
+          srcset="https://cdn.glitch.com/f0c7df61-7fbe-4e78-9ca5-9b43a539fb3e%2F11.jpg?v=1601779997512" />
+        <img src="https://cdn.glitch.com/f0c7df61-7fbe-4e78-9ca5-9b43a539fb3e%2F111.jpg?v=1601842864246"
+          style="max-width:100%" alt="Boston" />
+      </picture>
+      <div class="text">Boston</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 of 6</div>
+
+      <picture>
+        <source media="(min-width: 769px)"
+          srcset="https://cdn.glitch.com/f0c7df61-7fbe-4e78-9ca5-9b43a539fb3e%2F2.jpg?v=1601694649335" />
+        <source media="(min-width: 481px)"
+          srcset="https://cdn.glitch.com/f0c7df61-7fbe-4e78-9ca5-9b43a539fb3e%2F22.jpg?v=1601780000090" />
+        <img src="https://cdn.glitch.com/f0c7df61-7fbe-4e78-9ca5-9b43a539fb3e%2F222.jpg?v=1601842866791"
+          style="max-width:100%" alt="Philadelphia" />
+      </picture>
+
+      <div class="text">Philadelphia</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 of 6</div>
+      <picture>
+        <source media="(min-width: 769px)"
+          srcset="https://cdn.glitch.com/f0c7df61-7fbe-4e78-9ca5-9b43a539fb3e%2F3.jpg?v=1601694651974" />
+        <source media="(min-width: 481px)"
+          srcset="https://cdn.glitch.com/f0c7df61-7fbe-4e78-9ca5-9b43a539fb3e%2F33.jpg?v=1601780003897" />
+        <img src="https://cdn.glitch.com/f0c7df61-7fbe-4e78-9ca5-9b43a539fb3e%2F333.jpg?v=1601842869480"
+          style="max-width:100%" alt="Florida" />
+      </picture>
+      <div class="text">Florida</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">4 of 6</div>
+      <picture>
+        <source media="(min-width: 769px)"
+          srcset="https://cdn.glitch.com/f0c7df61-7fbe-4e78-9ca5-9b43a539fb3e%2F4.jpg?v=1601694655258" />
+        <source media="(min-width: 481px)"
+          srcset="https://cdn.glitch.com/f0c7df61-7fbe-4e78-9ca5-9b43a539fb3e%2F44.jpg?v=1601780006272" />
+        <img src="https://cdn.glitch.com/f0c7df61-7fbe-4e78-9ca5-9b43a539fb3e%2F444.jpg?v=1601842871708"
+          style="max-width:100%" alt="Hainan" />
+      </picture>
+      <div class="text">Hainan</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">5 of 6</div>
+      <picture>
+        <source media="(min-width: 769px)"
+          srcset="https://cdn.glitch.com/f0c7df61-7fbe-4e78-9ca5-9b43a539fb3e%2F5.jpg?v=1601694658029" />
+        <source media="(min-width: 481px)"
+          srcset="https://cdn.glitch.com/f0c7df61-7fbe-4e78-9ca5-9b43a539fb3e%2F55.jpg?v=1601780009155" />
+        <img src="https://cdn.glitch.com/f0c7df61-7fbe-4e78-9ca5-9b43a539fb3e%2F555.jpg?v=1601842873768"
+          style="max-width:100%" alt="Princeton" />
+      </picture>
+      <div class="text">Nanjing</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">6 of 6</div>
+      <picture>
+        <source media="(min-width: 769px)"
+          srcset="https://cdn.glitch.com/f0c7df61-7fbe-4e78-9ca5-9b43a539fb3e%2F6.jpg?v=1601694663174" />
+        <source media="(min-width: 481px)"
+          srcset="https://cdn.glitch.com/f0c7df61-7fbe-4e78-9ca5-9b43a539fb3e%2F66.jpg?v=1601780011638" />
+        <img src="https://cdn.glitch.com/f0c7df61-7fbe-4e78-9ca5-9b43a539fb3e%2F666.jpg?v=1601842875751"
+          style="max-width:100%" alt="Princeton" />
+      </picture>
+      <div class="text">Princeton</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+  </div>
+
+  <div id="reset">
+    <button type="submit" onclick="index()" id="btni" class="btn_all">Like</button>
+    <button type="submit" onclick="reseth()" id="btnrh" class="btn_all">Reset Hour</button>
+    <button type="submit" onclick="resetd()" id="btnrd" class="btn_all">Reset 24h</button>
+    <button type="submit" onclick="resetw()" id="btnrw" class="btn_all">Reset Week</button>
+    <br><br>
+    <p id="likes_hour">Last hour likes:<span id="hourid" style="margin-left: 10px;"></span>
+      &nbsp;&nbsp;&nbsp;Last 24 hours likes:<span id="dayid" style="margin-left: 10px;"></span>
+      &nbsp;&nbsp;&nbsp;Last week likes:<span id="weekid" style="margin-left: 10px;"></span></p>
+  </div>
+
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    var result = {
+
+    }
+    var flag = false
+
+    function plusSlides(n) {
+      showSlides((slideIndex += n));
+    }
+
+    function currentSlide(n) {
+      showSlides((slideIndex = n));
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+
+      $.get(`../getLike`, function (data, status) {
+        result = data
+        var number = n % 6 == 0 ? n = 1 : n
+        setLike(number)
+      });
+    }
+
+    function setLike(id) {
+      document.getElementById("hourid").innerText = result['project' + id].hour
+      document.getElementById("dayid").innerText = result['project' + id].day
+      document.getElementById("weekid").innerText = result['project' + id].week
+    }
+
+
+    function index() {
+      console.log(slideIndex)
+      $.get(`../addlike?id=` + slideIndex, function (data, status) {
+        result = data
+        setLike(slideIndex)
+      });
+    }
+
+    function reseth() {
+      $.get(`../resetLike?id=${slideIndex}&type=0`, function (data, status) {
+        result = data
+        setLike(slideIndex)
+      });
+    }
+
+    function resetd() {
+      $.get(`../resetLike?id=${slideIndex}&type=1`, function (data, status) {
+        result = data
+        setLike(slideIndex)
+      });
+    }
+
+    function resetw() {
+      $.get(`../resetLike?id=${slideIndex}&type=2`, function (data, status) {
+        result = data
+        setLike(slideIndex)
+      });
+    }
+  </script>
+</body>
+
+</html>

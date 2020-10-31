@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comment</title>
+  <link rel="stylesheet" type="text/css" href="/public/style.css"> 
+  <script type="text/javascript" src="jquery-1.7.2.js"></script>
+</head>
+
+<body>
+  <h1 style="text-align:center">Welcome to Jingwen's Page</h1>
+  <div id="navigation" style="text-align:center">
+    <ul class="main-nav">
+      <a href="image.html">Image</a>
+      <a href="page2.html">Project</a>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-6 col-s-3">
+      <div>
+        <table id="t1">
+          <caption>
+            Personal Information
+          </caption>
+          <tr>
+            <th style="text-align:left">Name</th>
+            <th style="text-align:left">Telephone</th>
+            <th style="text-align:left">Email</th>
+          </tr>
+          <tr>
+            <td>Jingwen Yan</td>
+            <td>412-853-4646</td>
+            <td>JIY99@pitt.edu</td>
+          </tr>
+          <tr>
+            <th style="text-align:left">School</th>
+            <th style="text-align:left">Major</th>
+            <th style="text-align:left">Degree</th>
+          </tr>
+          <tr>
+            <td>University of Pittsburgh</td>
+            <td>Information Science</td>
+            <td>Master</td>
+          </tr>
+        </table>
+      </div>
+
+      <div>
+        <table id="t2">
+          <caption>
+            Class Schedule
+          </caption>
+          <tr>
+            <th style="text-align:left">Date</th>
+            <th style="text-align:left">Course</th>
+            <th style="text-align:left">Time</th>
+          </tr>
+          <tr>
+            <td>Mon</td>
+            <td>
+              INFORMATN STORAGE & RETRIEVAL
+            </td>
+            <td>12:10 - 15:00</td>
+          </tr>
+          <tr>
+            <td>Mon</td>
+            <td>NETWORK AND WEB DATA TECHNOLOGIES</td>
+            <td>18:30 - 19:30</td>
+          </tr>
+          <tr>
+            <td>Tue</td>
+            <td>MACHINE LEARNING</td>
+            <td>18:30 - 21:20</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-4 col-s-12" id="outer">
+      <div class="outer">
+          <div class="head"></div>
+          <div class="Comment">
+            Name：<input type="text" id="userName" />
+            <button type="submit" onclick="addComent()" class="btn">Comment</button>
+          </div>
+          <textarea id="userWords" cols="30" rows="10"></textarea>
+          <ul id="myList"></ul>
+      </div>
+    </div>
+  </div>
+  
+ 
+</body>
+<script>
+  function addComent() {
+    var userName = document.getElementById("userName").value
+    var userWords = document.getElementById("userWords").value
+    if (userName == "" || userWords == "") {
+      alert("The input content cannot be empty")
+      return
+    }
+    $.ajax({
+      type: "POST",
+      url: "/addcomment",
+      contentType: "application/json", 
+      dataType: "json", 
+      data: JSON.stringify({ 'userName': userName, 'userWords': userWords }),  
+      success: function (jsonResult) {
+        console.log(jsonResult)
+        if(jsonResult.isOldUser){
+          alert(`Welcome back ${userName}! Your last comment was on ${jsonResult.time}`)
+        }else{
+          alert(`Welcome ${userName} to my site!`)
+        }
+        document.getElementById("userName").value = ""
+        document.getElementById("userWords").value = ""
+        getComment()
+      }
+    });
+    console.log(userName, userWords)
+  }
+  getComment()
+  function getComment() {
+    $.get(`../getComment`, function (data, status) {
+      console.log(data)
+      var html = ""
+      var arr = []
+      for (var i = data.length - 1; i >= 0; i--) {
+        if (arr.length < 5) {
+          arr.push(data[i])
+        }
+      }
+      arr.forEach(element => {
+        html += `<li><span style = "font-weight:bold">Author: ${element.userName}</span>
+          <span  style = "font-weight:bold"">Date: ${element.time}</span>
+          <br><span>Comment: ${element.userWords}</span>
+          </li>`
+      });
+      $("#myList").html(html)
+    });
+  }
+</script>
+
+</html>
